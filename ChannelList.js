@@ -1315,7 +1315,7 @@ function ChannelList(props) {
   }), React.createElement("div", {
     className: "sendbird-channel-list__body",
     onScroll: function onScroll(e) {
-      var fetchMore = e.target.clientHeight + e.target.scrollTop === e.target.scrollHeight;
+      var fetchMore = e.target.clientHeight + Math.round(e.target.scrollTop) === e.target.scrollHeight;
 
       if (fetchMore && channelSource.hasNext) {
         logger.info('ChannelList: Fetching more channels');
